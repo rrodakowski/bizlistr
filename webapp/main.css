@@ -1,0 +1,257 @@
+@charset "UTF-8";
+/* CSS Document */
+/*Header/NAv Styles */
+.clear{
+    clear:both;
+}
+h1{
+    margin:15px 0;
+    font-size:26px;
+}
+h2{
+    color: #104070;
+}
+.head{
+    height: auto;
+    width:960px;
+    margin:0px auto;
+}
+.top{
+    height:500px; 
+    background-image:url('images/header_bg.jpg');
+}
+.title_search{
+    overflow:visible;
+    height:140px;
+    padding-top:20px;
+    padding-bottom:14px;
+}
+#search{
+    position: relative;
+    height: 60px;
+    left: 630px;
+    bottom: 60px;
+    width:350px;
+    z-index: 20;
+}
+#banner{
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.newsColumn li{
+    width:220px;
+}
+.newsColumn{
+    padding-right:12px;
+    background:#fff;
+    float:left;
+    width:240px;
+    text-align:left;
+    height:auto;
+}
+.companiesColumn li{
+    width:220px;
+}
+.companiesColumn{
+    padding-right:12px;
+    background:#fff;
+    float:left;
+    width:240px;
+    text-align:left;
+    height:auto;
+}
+.employmentColumn li {
+    width:220px;
+}
+.employmentColumn{
+    padding-right:12px;
+    background:#fff;
+    float:left;
+    width:240px;
+    text-align:left;
+    height:auto;
+}
+#designed-by a{
+    color: #104070;
+}
+#designed-by{
+    color: #104070;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.column-title-img{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#nav{
+    height: 33px;
+}
+#container{
+    margin:0px auto;
+    overflow: auto;
+    width:1006px;
+    background-image:url('images/bg_bar.jpg'); 
+    background-repeat: repeat-y;
+}
+.ad{
+    height: auto;
+    margin-left:24px;
+    float:left;
+    width:161px;
+    padding-left: 5px;
+}
+.list-image{
+    padding-right:4px;
+}
+#columns-holder a:visited {
+    color:black;
+}
+#columns-holder a:hover {
+    color: #104070;
+}
+#columns-holder a:link {
+    color:black;
+}
+.ad_entry{
+    height: 79px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+ul li.header{
+    background:#CCC;
+    /*background:#fff;*/
+    color:#333;
+    font-size:103%;
+    font-weight:bolder;
+}
+.listingColumn li{
+    background:#fff;
+    margin-right:10px;
+    /*margin:0px;*/
+}
+li.nav{
+    margin-top:1px;
+}
+ul.jobListing {width:680px;float:left;}
+ul.jobListing li{padding:10px;}
+.jobListing .first{background:#CCC;}
+.jobListing li.description{
+    margin-top:0;
+    border-top:1px solid #CCC;
+    padding: 3px 10px;
+}
+.jobListing li li{
+    margin-left:0;
+    padding-left:0;
+}
+.hide{
+    display:none;
+}
+
+table td{
+    font-size:small;
+    padding:5px 8px;
+    vertical-align:top;
+}
+#tbl_content{
+    float:left;
+    width:680px;
+}
+
+/*************** GENERAL SITE STYLES **************/
+#content {
+  width: 960px;
+  margin-left:25px;
+  margin-right:18px;
+  float:left;
+}
+#body {
+  width: 720px;
+  float:left;
+}
+#columns-holder{
+  float:left;
+  border-color: #eeeeee;
+  border-style: solid;
+  border-right-width: 1px;
+}
+/***************** HEADER *************************/
+
+div#logo {
+  position:relative;
+  width: 363px;
+}
+
+div#logo img {
+  border-style: none;
+}
+.nav_button:hover {
+  background-image:url('images/active_nav_button.jpg'); 
+}
+.nav_button li{
+	
+}
+.nav_button{
+  line-height: 33px;
+  text-align:center;
+  width: 53px;
+  height: 33px;
+  float: left;
+  background-image:url('images/button.jpg'); 
+}
+
+/****** footer ******/
+#footer{
+    overflow: hide;
+    clear: both;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 8px;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+} 
+.social-icon{
+    float:right;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.question-top {
+    font-size: 18px;
+    font-weight:bold;
+    border-style: solid;
+    border-bottom-width: 1px;
+    color: #104070;
+}
+td.question{
+    font-style: italic;
+}
+.question{
+    padding: 8px;
+    background-color: #eeeeee;
+    float: left;
+    width: 452px;
+}
+.latest_posts p {
+	width:210px;
+}
+.latest_posts {
+    float: left;
+    width: 240px;
+}
+form input[type=submit]{
+	background:url("images/submit_button.png") no-repeat center center;
+	float: right;
+	width:115px;
+	height:52px;
+	border:none;
+	color: transparent;
+}
+.about p {
+	width:450px;
+}
+.about {
+    float: left;
+    width: 468px;
+}

@@ -1,0 +1,229 @@
+/*
+    Document   : style
+    Created on : Dec 9, 2007, 5:35:28 PM
+    Author     : Randall  Rodakowski
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style 
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+/*************** GENERAL SITE STYLES **************/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  font-family: arial;
+  font-size: .9em;
+  text-align: center /* This line for centering entire page (older IE browsers) */
+}
+body ul {
+  list-style: none;
+}
+body ul li {
+  display: inline;
+}
+
+div#wrap {
+  text-align: left;  /* This line for centering entire page*/
+  width: 900px;
+  margin: 0 auto;  /* This line for centering entire page*/
+ 
+}
+/***************** HEADER *************************/
+
+div#logo {
+  height: 78px;
+  padding-left: 20px;
+  margin: 0 0 0 0px;
+
+}
+
+div#logo img {
+  border-style: none;
+}
+
+/* primary (blue) header area */
+div#header {
+  height: 180px;
+  margin: 0 0 0 0px;
+  background-attachment: scroll;
+  background-image: url(images/headerSlice.gif);
+  background-repeat: repeat-x;
+}
+
+/* black bar in header */
+div#header-divider {
+  margin: 0 0 0 0px;
+  height: 5px;
+  background-color: #000000;
+}
+
+/* grey bar in header */
+div#navigation {
+  height: 30px;
+  background-color: #4C4F5E;
+}
+
+/* container for the links */
+div#navigation ul {
+  margin: 0 0 0 400px;
+  padding-top: 7px;
+}
+
+/* spacing between links */
+div#navigation ul li {
+  padding: 0 10px;
+}
+
+/* the actual links in header */
+div#navigation a {
+  color: white;
+  font-weight: bold;
+  font-size: .8em;
+  text-decoration: none;
+}
+
+/* grey gradient at the bottom of the header */
+div#header-body-divider {
+  height: 70px;
+  margin: 0 0 0 0px;
+  background-attachment: scroll;
+  background-image: url(images/greyGradientSlice.gif);
+  background-repeat: repeat-x;
+  background-color: #4C4F5E;
+}
+
+/***************** BODY *************************/
+
+div#body {
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 0;
+}
+
+div#body h3 {
+  padding-top: 0px;
+  font-family: serif;
+  color: #F5941D;
+}
+
+div#images a:link {
+    text-decoration: none
+}
+
+div#images a:visited {
+    text-decoration: none
+}
+
+div#images a:active {
+    text-decoration: none
+}
+
+div#images a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+/***************** FOOTER *************************/
+
+div#footer {
+  height: 30px;
+  background-color: #ffffff;
+  clear:both;
+}
+
+/* container for the links */
+div#footer ul {
+  margin: 0 0 0 250px;
+  padding-top: 4px;
+}
+
+/* spacing between links */
+div#footer ul li {
+  padding: 0 10px;
+}
+
+div#footer a {
+  color: #1DA5DC;
+  font-weight: bold;
+  font-size: .8em;
+  text-decoration: none;
+}
+
+/************** Login Page ***********/
+
+div#leftColumn {
+  float: left;
+  width:300px; 
+border: solid 1px red;
+}
+
+div#rightColumn {
+  float: right;
+  width:500px;
+border: solid 1px green;
+}
+
+div.loginForm {
+  float:left;
+  width:250px;
+  clear:left;
+  padding-bottom: 50px;
+  padding-left: 50px;
+}
+
+div.description {
+  width:550px;
+  float:left;
+  padding-left: 10px;
+}
+
+div.description p {
+  clear:left;
+  font-size: 12px;
+}
+
+div.productDetailDescription {
+  width:600px;
+  float:left;
+  padding-left: 20px;
+}
+
+div.productDetailDescription ul {
+
+}
+
+div.productDetailDescription ul li {
+  display: block;
+}
+
+/*************** FORMS ******************/
+form#shoppingCart {
+/*  border: solid 1px black; */
+  margin-left: 100px;
+}
+form#shoppingCart table {
+/*  border: solid 1px green; */
+  width: 600px;
+}
+form#shoppingCart table td {
+/*  border: solid 1px blue; */
+  text-align: center;
+}
+form#shoppingCart table td.product {
+  width: 150px;
+}
+form#shoppingCart table td.description {
+  width: 200px;
+}
+form#shoppingCart table td.qty {
+  width: 50px;
+}
+form#shoppingCart table td.price {
+  width: 50px;
+}

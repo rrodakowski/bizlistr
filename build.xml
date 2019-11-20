@@ -1,0 +1,104 @@
+<project name="bizlistr-dev" basedir="." default="build_bizlistr">
+  <description>
+    Deploys bizlistr.com to the dev location on the production server.
+  </description>
+
+  <property file="Build.properties" />
+
+  <!-- This is the core target for CPSCore build. -->
+  <target name="build_bizlistr" depends="ship_build"/>
+
+<!-- clean up and create build environment  -->
+  <!-- <target name="create-build-env" description="Create directory stucture for CpsCore build">
+    <delete quiet="true">
+      <fileset dir="${deploy.root.dir}/bin"/>
+      <fileset dir="${deploy.root.dir}/config"/>
+    </delete>
+
+    <mkdir dir="${deploy.root.dir}/bin" />
+    <mkdir dir="${deploy.root.dir}/config" /> 
+  </target> -->
+
+  <!-- <target name="build" depends="create-build-env" >
+    <antcall target="all" description="start building modules"/>
+  </target> -->
+  
+  <!--Target to fix line feed character issue-->
+  <!--<target name="fix_unix_line_feeds"  depends="build" >
+    <exec dir="${deploy.root.dir}" executable="${builder.path}/char_clean.ksh"/>
+  </target> -->
+  
+  <target name="fix_permissions">
+  	<echo> Updating Permissions </echo>
+	<chmod perm="777" type="file">
+      <fileset dir="${refresh.hudson.dir}" includes="*.sh"/>
+	  <fileset dir="${build.hudson.dir}" includes="*.sh"/>
+    </chmod>	
+  </target>
+  
+  <!-- this target builds all the modules for checkpoint-cps-core -->
+  <target name="ship_build" depends="fix_permissions">
+    <echo>making the tar ball</echo>
+    <exec executable="./create_tar.sh" failonerror="true">
+      <arg line=" ${build.local.root} ${build.hudson.dir}"/>
+    </exec>
+	
+	<echo>shipping tarball to destination machine</echo>
+    <scp todir="${destination.machine.username}:${destination.machine.password}@${destination.machine}:/${deploy.staging.dir}" trust="true" verbose="true">
+      <fileset dir="${build.local.root}"/>
+    </scp>
+	
+	<echo>ssh to destination machine and unpacking tarball</echo>
+    <!-- <sshexec host="${destination.machine}"
+         username="${destination.machine.username}"
+         password="${destination.machine.password}"
+         command="chmod -R 555 ${cp.release.dir}"
+           failonerror="true"
+         trust="true"
+           output="CpsCoreBuilder.out"/> -->
+  </target>
+  
+   <target name="refresh_db" depends="fix_permissions">
+    <echo>ssh to prod machine</echo>
+		<sshexec host="${destination.machine}"
+         username="${destination.machine.username}"
+         password="${destination.machine.password}"
+         command="mysqldump -R -u${mysql.user} -p${mysql.password} ${mysql.db} > /home/randall/sqlfile"
+           failonerror="true"
+         trust="true"
+           output="CpsCoreBuilder.out"/>    
+	
+	<echo>getting sqlfile to mars</echo>
+	<scp file="${destination.machine.username}:${destination.machine.password}@${destination.machine}:/home/randall/sqlfile" todir="/home/randall/hudson/bizlistr" trust="true"/>
+	
+    <echo>now refreshing mysql db on mars with the production data</echo>
+	<exec executable="./refresh_db.sh" failonerror="true">
+      <arg line=" ${mysql.user} ${mysql.password} ${mysql.db}"/>
+    </exec>
+	
+	<echo> Done refreshing the database!</echo>
+	
+  </target>
+
+  <!-- <target name="install">
+    <echo>Install is called</echo>
+	  <property name="BUILD_ID" value="${build.id}"/>
+    <sshexec host="${destination.machine}"
+      username="${destination.machine.username}"
+      password="${destination.machine.password}"
+      command="/checkpoint/configman/scripts/install_release build_int_${BUILD_ID}"
+        failonerror="true"
+      trust="true"
+        output="CpsCoreBuilder.out"/> 
+  </target> -->
+
+  <!-- <target name="all" >
+    <antcall target="Utils">
+    </antcall>
+  </target> -->
+  
+  <!-- this target builds only pid module -->
+  <!-- <target name="Utils">
+    <ant antfile="build.xml" description="Utils" dir="./Utils" inheritrefs="true"/>
+  </target> -->
+</project>

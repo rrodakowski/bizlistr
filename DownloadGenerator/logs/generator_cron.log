@@ -1,0 +1,24 @@
+Successfully connected to MySQL server using TCP/IP...
+ *** Bizlistr DownloadGeneration Complete *** 
+Successfully connected to MySQL server using TCP/IP...
+ *** Bizlistr DownloadGeneration Complete *** 
+Successfully connected to MySQL server using TCP/IP...
+ *** Bizlistr DownloadGeneration Complete *** 
+Successfully connected to MySQL server using TCP/IP...
+ *** Bizlistr DownloadGeneration Complete *** 
+Successfully connected to MySQL server using TCP/IP...
+ *** Bizlistr DownloadGeneration Complete *** 
+Successfully connected to MySQL server using TCP/IP...
+ *** Bizlistr DownloadGeneration Complete *** 
+Exception: Access denied for user 'randall'@'localhost' (using password: YES)
+Exception in thread "main" java.lang.NullPointerException
+	at bizlistr.DownloadGenerator.getCompaniesFromDb(DownloadGenerator.java:111)
+	at bizlistr.DownloadGenerator.main(DownloadGenerator.java:247)
+RIAGNetErrorLog | 20110123000503 | prepilot.pl | run_generator.sh | TocRunner |   bombed
+RIAGNetEventLog | 20110123000503 | prepilot.pl | run_generator.sh | Exiting | Return with 1
+Exception: Access denied for user 'randall'@'localhost' (using password: YES)
+Exception in thread "main" java.lang.NullPointerException
+	at bizlistr.DownloadGenerator.getCompaniesFromDb(DownloadGenerator.java:111)
+	at bizlistr.DownloadGenerator.main(DownloadGenerator.java:247)
+RIAGNetErrorLog | 20110130000504 | prepilot.pl | run_generator.sh | TocRunner |   bombed
+RIAGNetEventLog | 20110130000504 | prepilot.pl | run_generator.sh | Exiting | Return with 1
