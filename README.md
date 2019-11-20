@@ -1,2 +1,2 @@
 # bizlistr
-old php site, kept here for my personal reference. 
+old php site, kept here as an archival reference. 
